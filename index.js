@@ -12,6 +12,7 @@
 // then(callback) - Used to attach a callback when the promise is resolved/fulfilled
 // catch(callback) - Used to attach a callback when the promise is rejected
 
+//Example 1 
 let car = new Promise(function(resolve, reject){
     fullTank = false;
     if (fullTank)
@@ -25,3 +26,28 @@ car.then(function(){
 }).catch(function(){
     document.write("The tank is not empty")
 })
+
+
+//Example 2
+const inventory = {
+    paper: -1,
+    pencil: 3,
+    gums: 2
+  };
+  
+  const myCheck = (resolve, reject) => {
+    if (inventory.paper > 0) {
+        resolve('Paper order processed.');
+    } else {
+        reject('That item is sold out.'); 
+    }
+  };
+  
+  const orderPaper = () => {
+    return new Promise(myCheck);
+  };
+  
+  const checkInventory = orderPaper();
+  
+  console.log(checkInventory);          
+  
