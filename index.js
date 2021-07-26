@@ -51,3 +51,23 @@ const inventory = {
   
   console.log(checkInventory);          
   
+//Example 3
+let numbers = {
+    negative: -6,
+    tens: 100,
+    units: 26
+  };
+  
+let numberCheck = new Promise(function(resolve, reject){
+    if (numbers.tens <= 0) {
+        resolve()
+    } else {
+        reject() 
+    }
+  })
+  
+numberCheck.then(function(){
+    document.write('Number is equal or less than 0.')
+}).catch(function(){
+    document.write('Number is higher than 0.')
+})
